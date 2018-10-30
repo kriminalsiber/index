@@ -10,11 +10,14 @@ var config = {
 
 // Firebase Database Reference and the child
 const dbRef = firebase.database().ref();
-const usersRef = dbRef.child('akunpenipu');
+const usersRef = dbRef.child('akunpenipu	');
 
 
 	readUserData();
-	
+
+// --------------------------
+// READ
+// --------------------------
 function readUserData() {
 
 	const userListUI = document.getElementById("table_body");
@@ -37,11 +40,10 @@ function readUserData() {
 			let $li = document.createElement("tr");
 
 			
-			$li.innerHTML = ( "<tr><td>" + value.nomor + "</td><td>" + value.nama + "</td><td class='batasan'><a href="+ value.link +">" + value.link + "</td><td>" + value.kasus + "</td><td>" + value.kronologi + "</td><td>" + value.idakun + "</td></tr>");
-			$li.append(editIconUI);
-			$li.append(deleteIconUI);
+$li.innerHTML = ( "<tr><td>" + value.nomor + "</td><td>" + value.nama + "</td><td class='batasan'><a href="+ value.link +">" + value.link + "</td><td>" + value.kasus + "</td><td>" + value.kronologi + "</td><td>" + value.idakun + "</td></tr>");
 
 			$li.setAttribute("user-key", key);
+			$li.addEventListener("click", userClicked)
 			userListUI.append($li);
 
  		});
@@ -49,4 +51,27 @@ function readUserData() {
 
 	})
 	
+}
+
+function userClicked(e) {
+
+
+		var userID = e.target.getAttribute("user-key");
+
+		const userRef = dbRef.child('penipuan/' + userID);
+		const userDetailUI = document.getElementById("MainDiv");
+
+		userRef.on("value", snap => {
+
+			userDetailUI.innerHTML = ""
+
+			snap.forEach(childSnap => {
+				var $p = document.createElement("p");
+				$p.innerHTML = childSnap.key  + " - " +  childSnap.val();
+				userDetailUI.append($p);
+			})
+
+		});
+
+ 
 }
