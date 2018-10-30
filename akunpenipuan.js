@@ -42,7 +42,6 @@ function readUserData() {
 			$li.append(deleteIconUI);
 
 			$li.setAttribute("user-key", key);
-			$li.addEventListener("click", userClicked)
 			userListUI.append($li);
 
  		});
