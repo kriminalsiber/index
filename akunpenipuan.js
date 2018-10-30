@@ -14,10 +14,7 @@ const usersRef = dbRef.child('akunpenipu');
 
 
 	readUserData();
-
-// --------------------------
-// READ
-// --------------------------
+	
 function readUserData() {
 
 	const userListUI = document.getElementById("table_body");
@@ -39,20 +36,7 @@ function readUserData() {
 				value = childSnap.val()
 			let $li = document.createElement("tr");
 
-			// edit icon
-			let editIconUI = document.createElement("td");
-			editIconUI.class = "hapoes";
-			editIconUI.innerHTML = " ✎";
-			editIconUI.setAttribute("userid", key);
-			editIconUI.addEventListener("click", editButtonClicked)
-
-			// delete icon
-			let deleteIconUI = document.createElement("td");
-			deleteIconUI.class = "hapoes";
-			deleteIconUI.innerHTML = " ✘";
-			deleteIconUI.setAttribute("userid", key);
-			deleteIconUI.addEventListener("click", deleteButtonClicked)
-
+			
 			$li.innerHTML = ( "<tr><td>" + value.nomor + "</td><td>" + value.nama + "</td><td class='batasan'><a href="+ value.link +">" + value.link + "</td><td>" + value.kasus + "</td><td>" + value.kronologi + "</td><td>" + value.idakun + "</td></tr>");
 			$li.append(editIconUI);
 			$li.append(deleteIconUI);
