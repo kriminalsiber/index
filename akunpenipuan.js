@@ -10,7 +10,7 @@ var config = {
 
 // Firebase Database Reference and the child
 const dbRef = firebase.database().ref();
-const usersRef = dbRef.child('akunpenipu	');
+const usersRef = dbRef.child('akunpenipu');
 
 
 	readUserData();
