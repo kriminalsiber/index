@@ -1,4 +1,4 @@
- var config = {
+var config = {
     apiKey: "AIzaSyD5b30j_XRxmKE6KNBRoR3ObEqUaFLjZ4E",
     authDomain: "kriminal-siber.firebaseapp.com",
     databaseURL: "https://kriminal-siber.firebaseio.com",
@@ -31,9 +31,8 @@ function readUserData() {
 	var nomor = snap.child("nomor").val();
 	var nama = snap.child("nama").val();
 	var link = snap.child("link").val();
-	var idakun = snap.child("idakun").val();
 	var kasus = snap.child("kasus").val();
-	var idakun = snap.child("kronologi").val();
+	var kronologi = snap.child("kronologi").val();
 
 			let key = childSnap.key,
 				value = childSnap.val()
@@ -41,9 +40,8 @@ function readUserData() {
 
 			
 
-			$li.innerHTML = ( "<tr><td>" + value.nomor + "</td><td>" + value.nama + "</td><td class='batasan'><a href="+ value.link +">" + value.link + "</td><td>" + value.kasus + "</td><td>" + value.kronologi + "</td><td>" + value.idakun + "</td></tr>");
-			$li.append(editIconUI);
-			$li.append(deleteIconUI);
+			$li.innerHTML = ( "<tr><td>" + value.nomor + "</td><td>" + value.nama + "</td><td class='batasan'><a href="+ value.link +">" + value.link + "</td><td>" + value.kasus + "</td><td>" + value.kronologi + "</td></tr>");
+			
 
 			$li.setAttribute("user-key", key);
 			$li.addEventListener("click", userClicked)
@@ -78,4 +76,3 @@ function userClicked(e) {
 
  
 }
-
