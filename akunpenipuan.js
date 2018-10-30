@@ -41,7 +41,7 @@ function readUserData() {
 
 			
 
-			$li.innerHTML = ( "<tr><td>" + value.nomor + "</td><td>" + value.nama + "</td><td class='batasan'><a href="+ value.link +">" + value.namaakun + "</td><td>" + value.kasus + "</td><td role='cell' class='batasan'><a href="+ value.kronologi +" class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent''>Kron</tr>");
+			$li.innerHTML = ( "<tr><td>" + value.nomor + "</td><td>" + value.nama + "</td><td class='batasan'><a href="+ value.link +">" + value.namaakun + "</td><td>" + value.kasus + "</td><td role='cell' class='batasan'><a href="+ value.kronologi +" class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent''>Kronologi</tr>");
 			
 
 			$li.setAttribute("user-key", key);
