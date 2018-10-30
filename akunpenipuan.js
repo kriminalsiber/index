@@ -30,9 +30,10 @@ function readUserData() {
 
 	var nomor = snap.child("nomor").val();
 	var nama = snap.child("nama").val();
+	var namaakun = snap.child("namaakun").val();
 	var link = snap.child("link").val();
 	var kasus = snap.child("kasus").val();
-	var kronologi = snap.child("kronologi").val();
+	var idakun = snap.child("kronologi").val();
 
 			let key = childSnap.key,
 				value = childSnap.val()
@@ -40,7 +41,7 @@ function readUserData() {
 
 			
 
-			$li.innerHTML = ( "<tr><td>" + value.nomor + "</td><td>" + value.nama + "</td><td class='batasan'><a href="+ value.link +">" + value.link + "</td><td>" + value.kasus + "</td><td>" + value.kronologi + "</td></tr>");
+			$li.innerHTML = ( "<tr><td>" + value.nomor + "</td><td>" + value.nama + "</td><td class='batasan'><a href="+ value.link +">" + value.namaakun + "</td><td>" + value.kasus + "</td><td role='cell' class='batasan'><a href="+ value.kronologi +" class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent''>Kron</tr>");
 			
 
 			$li.setAttribute("user-key", key);
