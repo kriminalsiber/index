@@ -65,10 +65,5 @@ function readUserData() {
 
 
 	})
-	// document.getElementById("update").hidden = true;
-	 document.getElementById("update").style.visibility = "hidden";
-	 document.getElementById("imel").focus();
-
-
-
+	
 }
